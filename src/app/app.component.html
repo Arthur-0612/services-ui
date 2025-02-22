@@ -1,0 +1,16 @@
+<app-loading *ngIf="loading$ | async"></app-loading>
+
+<div class="wrapper" *ngIf="isLoggedIn; else loginTemplate">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    
+    <div class="content-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+    
+    <app-footer></app-footer>
+</div>
+
+<ng-template #loginTemplate>
+    <router-outlet></router-outlet>
+</ng-template>
